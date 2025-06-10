@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jungle Software Development — Calculadora de Calorias</title>
+  <!-- Referência ao CSS externo -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Jungle Software Development — Calculadora de Calorias</h1>
+
+  <!-- 1) Seção de Cadastro/Consulta de Usuário -->
+  <fieldset>
+    <legend><strong>1. Perfil do Usuário</strong></legend>
+    <div>
+      <label for="altura">Altura (cm):</label>
+      <input type="number" id="altura" placeholder="ex.: 175" />
+    </div>
+    <div>
+      <label for="peso">Peso (kg):</label>
+      <input type="number" id="peso" placeholder="ex.: 70" />
+    </div>
+    <div>
+      <label for="idade">Idade:</label>
+      <input type="number" id="idade" placeholder="ex.: 30" />
+    </div>
+    <div>
+      <label for="sexo">Sexo:</label>
+      <input type="text" id="sexo" placeholder="M ou F" />
+    </div>
+    <button id="btnCadastrarUsuario">Cadastrar/Atualizar Usuário</button>
+    <button id="btnConsultarUsuario">Consultar Usuário</button>
+  </fieldset>
+
+  <!-- 2) Seção de Registro de Alimento -->
+  <fieldset>
+    <legend><strong>2. Registrar Consumo de Alimento</strong></legend>
+    <div>
+      <label for="alimentoNome">Nome:</label>
+      <input type="text" id="alimentoNome" placeholder="ex.: banana" />
+    </div>
+    <div>
+      <label for="alimentoQtd">Quantidade (g):</label>
+      <input type="number" id="alimentoQtd" placeholder="ex.: 120" />
+    </div>
+    <button id="btnRegistrarAlimento">Registrar Alimento</button>
+  </fieldset>
+
+  <!-- 3) Seção de Registro de Exercício -->
+  <fieldset>
+    <legend><strong>3. Registrar Exercício</strong></legend>
+    <div>
+      <label for="exercicioNome">Nome:</label>
+      <input type="text" id="exercicioNome" placeholder="ex.: running" />
+    </div>
+    <div>
+      <label for="exercicioMin">Minutos:</label>
+      <input type="number" id="exercicioMin" placeholder="ex.: 30" />
+    </div>
+    <div>
+      <label for="exercicioPeso">Peso (kg):</label>
+      <input type="number" id="exercicioPeso" placeholder="ex.: 70" />
+    </div>
+    <button id="btnRegistrarExercicio">Registrar Exercício</button>
+  </fieldset>
+
+  <!-- 4) Seção de Consulta de Extrato -->
+  <fieldset>
+    <legend><strong>4. Consultar Extrato</strong></legend>
+    <div>
+      <label for="extratoIni">Data Início:</label>
+      <input type="text" id="extratoIni" placeholder="2025-06-03T00:00:00" />
+    </div>
+    <div>
+      <label for="extratoFim">Data Fim:</label>
+      <input type="text" id="extratoFim" placeholder="2025-06-03T23:59:59" />
+    </div>
+    <button id="btnConsultarExtrato">Consultar Extrato</button>
+  </fieldset>
+
+  <!-- 5) Seção de Consulta de Saldo -->
+  <fieldset>
+    <legend><strong>5. Consultar Saldo de Calorias</strong></legend>
+    <div>
+      <label for="saldoIni">Data Início:</label>
+      <input type="text" id="saldoIni" placeholder="2025-06-03T00:00:00" />
+    </div>
+    <div>
+      <label for="saldoFim">Data Fim:</label>
+      <input type="text" id="saldoFim" placeholder="2025-06-03T23:59:59" />
+    </div>
+    <button id="btnConsultarSaldo">Consultar Saldo</button>
+  </fieldset>
+
+  <!-- 6) Área onde exibiremos as respostas JSON -->
+  <div class="resultado">
+    <h2>Resultado:</h2>
+    <pre id="resultadoJson">{ }</pre>
+  </div>
+
+  <!-- Referência ao JavaScript externo -->
+  <script src="script.js"></script>
+</body>
+</html>
