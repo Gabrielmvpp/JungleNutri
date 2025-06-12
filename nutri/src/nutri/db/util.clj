@@ -1,30 +1,25 @@
+;; src/nutri/db/util.clj
 (ns nutri.db.util
-  (:import [java.time LocalDateTime ZoneId]
+  (:import [java.time LocalDateTime LocalDate ZoneId]
            [java.time.format DateTimeFormatter]))
 
-(def ^:private fmt
-  (DateTimeFormatter/ofPattern "yyyy-MM-dd'T'HH:mm:ss"))
+(def fmt-iso (DateTimeFormatter/ofPattern "yyyy-MM-dd['T'HH:mm:ss]"))
+(def fmt-dmy (DateTimeFormatter/ofPattern "dd/MM/yyyy"))
 
-(defn agora-str
-  "Retorna a data e hora atuais no formato ISO-8601 (yyyy-MM-dd'T'HH:mm:ss)."
-  []
-  (-> (LocalDateTime/now (ZoneId/systemDefault))
-      (.format fmt)))
+(defn agora-str []
+  (.format (LocalDateTime/now (ZoneId/systemDefault)) fmt-iso))
 
-(defn parse-datetime
-  "Converte uma String no formato yyyy-MM-dd'T'HH:mm:ss para LocalDateTime.
-   Se input for nil ou string inválida, retorna nil."
-  [s]
+(defn parse-datetime [s]
   (try
-    (when (and s (not (empty? s)))
-      (LocalDateTime/parse s fmt))
+    (LocalDateTime/parse s fmt-iso)
     (catch Exception _
-      nil)))
+      (try
+        ;; se vier só data dd/MM/yyyy → assume meia-noite
+        (-> (LocalDate/parse s fmt-dmy)
+            (.atStartOfDay))
+        (catch Exception _ nil)))))
 
-(defn between?
-  "Retorna true se data est estiver entre data-inicio e data-fim (inclusive).
-   Todas devem ser LocalDateTime. Se qualquer uma for nil, retorna false."
-  [data-inicio data-est data-fim]
-  (and data-inicio data-est data-fim
-       (not (.isBefore data-est data-inicio))  ; data-est >= data-inicio
-       (not (.isAfter data-est data-fim))))     ; data-est <= data-fim
+(defn between? [d1 d d2]
+  (and d1 d d2
+       (not (.isBefore d d1))
+       (not (.isAfter  d d2))))
