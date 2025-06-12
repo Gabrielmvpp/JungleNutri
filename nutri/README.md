@@ -1,44 +1,47 @@
-# nutri
+# JungleNutri — Calculadora de Calorias
 
-FIXME: description
+**Desenvolvido por**
+Gabriel Monteiro Do Vale de Paula – 2310397
+Mateus Levi Alencar – 2310315
 
-## Installation
+Este é o nosso trabalho da AV3 de Programação Funcional em Clojure. Atendemos a tudo que o PDF do professor requisitou:
 
-Download from http://example.com/FIXME.
+- Cadastro e consulta de usuário (altura, peso, idade, sexo)
+- Registro de consumo de alimento (API USDA)
+- Registro de atividade física (API Ninjas)
+- Exibição de extrato e saldo de calorias por período
+- Armazenamento em memória usando átomos
+- Front‐end e back‐end 100% em Clojure (Hiccup para views, Garden para CSS e um JS mínimo para interações)
 
-## Usage
+## Como rodar
 
-FIXME: explanation
+1. Clone este repositório e entre na pasta do projeto:
 
-    $ java -jar nutri-0.1.0-standalone.jar [args]
+   ```
+   É na primeira pasta de nutri, nao há que fica dentro de src. E sim a que é pai de src.
+   cd nutri
+   ```
 
-## Options
+2. Instale as dependências:
 
-FIXME: listing of options this app accepts.
+   ```
+   lein deps
+   ```
 
-## Examples
+3. Compile o ClojureScript para gerar `app.js`:
 
-...
+   ```
+   lein cljsbuild once app
+   ```
 
-### Bugs
+4. Inicie o servidor:
 
-...
+   ```
+   lein run
+   ```
 
-### Any Other Sections
-### That You Think
-### Might be Useful
+5. Abra no navegador em `http://localhost:3000`
 
-## License
+Pronto! O JungleNutri estará rodando na porta 3000. Aí é só cadastrar seu perfil, inserir alimentos ou exercícios, e consultar seu extrato e saldo de calorias.
 
-Copyright © 2025 FIXME
-
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
-
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
+Este projeto entrega todas as funcionalidades descritas no PDF de abertura, usando o poder do Clojure e das bibliotecas Ring, Compojure, Cheshire, clj-http e Garden.
