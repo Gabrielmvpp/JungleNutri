@@ -1,7 +1,7 @@
 # JungleNutri — Calculadora de Calorias
 
 **Desenvolvido por**
-Gabriel Monteiro Do Vale de Paula – 2310397
+Gabriel Monteiro Do Vale de Paula – 2310297
 Mateus Levi Alencar – 2310315
 
 Este é o nosso trabalho da AV3 de Programação Funcional em Clojure. Atendemos a tudo que o PDF do professor requisitou:
