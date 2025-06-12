@@ -51,12 +51,12 @@
    {:lang "pt-BR"}
    [:head
     [:meta {:charset "UTF-8"}]
-    [:title "Nutri — Calculadora de Calorias"]
+    [:title "JungleNutri — Calculadora de Calorias"]
     [:style style-css]
     ;; injeta o bundle compilado pelo cljsbuild:
     (include-js "/js/app.js")]
    [:body
-    [:h1 "Nutri — Calculadora de Calorias"]
+    [:h1 "JungleNutri — Calculadora de Calorias"]
     [:div.container
      ;; Formulários à esquerda
      [:div.form-container
