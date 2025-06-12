@@ -1,4 +1,3 @@
-;; src/nutri/db/util.clj
 (ns nutri.db.util
   (:import [java.time LocalDateTime LocalDate ZoneId]
            [java.time.format DateTimeFormatter]))
@@ -14,7 +13,6 @@
     (LocalDateTime/parse s fmt-iso)
     (catch Exception _
       (try
-        ;; se vier só data dd/MM/yyyy → assume meia-noite
         (-> (LocalDate/parse s fmt-dmy)
             (.atStartOfDay))
         (catch Exception _ nil)))))

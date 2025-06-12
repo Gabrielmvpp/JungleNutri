@@ -4,7 +4,7 @@
    [compojure.core            :refer [defroutes GET POST]]
    [compojure.route           :as   route]
    [ring.middleware.json      :refer [wrap-json-body]]
-   [ring.middleware.params    :refer [wrap-params]]    ;; aqui tinha typo
+   [ring.middleware.params    :refer [wrap-params]]
    [ring.util.response        :refer [response content-type]]
    [cheshire.core             :as   json]
    [nutri.views               :refer [home-page]]

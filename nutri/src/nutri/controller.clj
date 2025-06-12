@@ -1,4 +1,3 @@
-;; src/nutri/controller.clj
 (ns nutri.controller
   (:require
    [nutri.db.storage            :as db]

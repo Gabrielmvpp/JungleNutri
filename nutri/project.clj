@@ -4,7 +4,6 @@
   :license {:name "EPL-2.0 OR GPL-2.0-or-later"
             :url  "https://www.eclipse.org/legal/epl-2.0/"}
 
-  ;; Dependências
   :dependencies [[org.clojure/clojure       "1.10.3"]
                  [org.clojure/clojurescript "1.10.773"]
                  [compojure                 "1.6.2"]
@@ -18,10 +17,9 @@
                  [garden                    "1.3.10"]
                  [org.clojure/tools.logging "1.2.4"]]
 
-  ;; Plugin para compilar ClojureScript
+
   :plugins [[lein-cljsbuild "1.1.8"]]
 
-  ;; ajustado para olhar diretamente em src/
   :source-paths ["src"]
   :resource-paths ["resources"]
   :clean-targets ^{:protect false} ["target" "resources/public/js"]
@@ -29,7 +27,7 @@
   :cljsbuild
   {:builds
    [{:id           "app"
-     :source-paths ["src"]       ;; aqui o cljs também olha em src/, desde que o namespace esteja em src/nutri/frontend.cljs
+     :source-paths ["src"]
      :compiler     {:output-to     "resources/public/js/app.js"
                     :optimizations :whitespace
                     :pretty-print  true}}]}
