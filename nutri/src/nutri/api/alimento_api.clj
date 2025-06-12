@@ -1,6 +1,5 @@
 (ns nutri.api.alimento-api
-  (:require [clj-http.client :as http]
-            [cheshire.core   :as json]))
+  (:require [clj-http.client :as http]))
 
 (def api-key "Q1QCpllMUos1VCXtbDZTQgtc5tPIntZYyiY7E2PO")
 
